@@ -4,6 +4,8 @@ const AddBook = () => {
 	const [book, setBook] = useState({
 		title: '',
 		author: '',
+		isbn: '',
+		description: '',
 	});
 
 	const addBookToDatabase = () => {
@@ -39,6 +41,18 @@ const AddBook = () => {
 					placeholder='author'
 					value={book.author}
 					onChange={(e) => setBook({ ...book, author: e.target.value })}
+				/>
+				<input
+					type='text'
+					placeholder='isbn'
+					value={book.isbn}
+					onChange={(e) => setBook({ ...book, isbn: e.target.value })}
+				/>
+				<input
+					type='text'
+					placeholder='description'
+					value={book.description}
+					onChange={(e) => setBook({ ...book, description: e.target.value })}
 				/>
 				<button onClick={addBookToDatabase}>add</button>
 			</div>
